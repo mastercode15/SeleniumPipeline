@@ -4,7 +4,7 @@ import time
 
 
 def main():
-    driver = webdriver.Chrome('/usr/bin/chromedriver')
+    driver = webdriver.Firefox()
     driver.get("https://www.python.org")
     print(driver.title)
     search_bar = driver.find_element_by_name("q")
