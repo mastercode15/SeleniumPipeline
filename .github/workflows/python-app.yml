@@ -23,32 +23,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
         pip install selenium
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-#     - name: Install chromedriver
-#       run: |
-#         sudo apt-get update
-#         sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
-#         sudo apt-get install default-jdk 
-#         sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
-#         sudo echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
-#         sudo apt-get -y update
-#         sudo apt-get -y install google-chrome-stable
-#         wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
-#         unzip chromedriver_linux64.zip
-#         sudo mv chromedriver /usr/bin/chromedriver
-#         sudo chown root:root /usr/bin/chromedriver
-#         sudo chmod +x /usr/bin/chromedriver
-#         wget https://selenium-release.storage.googleapis.com/3.13/selenium-server-standalone-3.13.0.jar
-#         xvfb-run java -Dwebdriver.chrome.driver=/usr/bin/chromedriver -jar selenium-server-standalone.jar
-#         chromedriver --url-base=/wd/hub
+        pip install openpyxl
 
     - name: Run python
       run: |
